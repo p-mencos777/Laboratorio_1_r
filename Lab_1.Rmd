@@ -1,0 +1,76 @@
+Laboratorio 1
+
+1 Vectores y matrices
+```{r}
+s1 <- c(50.4,62.3,92.1,77.6,TRUE)
+s2 <- c(41.7,87.9,75.3,72.4,FALSE)
+s3 <- c(30.3,67.8,69.3,71.2,FALSE)
+s4 <- c(65.4,85.1,92.3,96.8,TRUE)
+s5 <- c(70.4,88.2,95.2,90.7,TRUE)
+
+students_vector <- c(s1,s2,s3,s4,s5)
+
+students_matrix <- matrix(students_vector, byrow = TRUE, nrow = 5)
+```
+Nombrado de una matriz
+
+```{r}
+name_students <- c("Lily Brown","Davis More","Susan Taylor","MIke Jones","Tom Hill")
+name_courses_legal_age <- c("TIC","Accounting","Psycologhy","Ethics","Legal_age")
+
+colnames(students_matrix) <- name_courses_legal_age
+rownames(students_matrix) <- name_students
+
+```
+3. rowSums, cbind
+
+```{r}
+
+total_grade_student <- rowSums(students_matrix[1:5,1:4])
+
+result_students <- cbind(students_matrix,total_grade_student)
+
+```
+4 Seleccionando elementos de una matriz
+
+```{r}
+
+selected_elements <- result_students[1:5,2:4]
+```
+
+5 Data Frames
+
+```{r}
+students_grades_df <- data.frame(result_students)
+
+subset(students_grades_df[2:5])
+
+```
+6 Funciones, Condicionales y Bucle
+
+```{r}
+students_projection <- function(){
+  count <- 0
+  for (v in result_students) {
+      nrow(result_students[1:5])
+      ncol(result_students[1:4])
+  }
+  
+  if(count >= 45)
+    print("Student at risk")
+  else
+    if(count > 45 %% count < 61)
+      print("Student may be approved")
+  else
+    if(count == 61)
+      print("Student approved")
+}
+
+return(students_projection())
+```
+7 Data frames y lapply
+
+```{r}
+
+```
+
